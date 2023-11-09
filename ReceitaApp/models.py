@@ -19,4 +19,5 @@ class Receita(models.Model):
     modoPreparo = models.TextField(max_length=8000)
     grauDificuldade = models.CharField(max_length=10, choices=OPCOES, null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    imagem = models.ImageField(null=True, upload_to='imagens/')
     
