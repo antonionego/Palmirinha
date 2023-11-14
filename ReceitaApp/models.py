@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Categoria(models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=30, verbose_name="Receita")
 
     def __str__(self):
         return self.nome
@@ -13,6 +13,8 @@ class Receita(models.Model):
         ('M', 'Moderado'),
         ('D', 'Difícil')
     ]
+    def __str__(self):
+        return self.nome
 
     nome = models.CharField(max_length=50)
     ingredientes = models.TextField(max_length=2000)
